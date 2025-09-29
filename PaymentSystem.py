@@ -4,5 +4,5 @@ class PaymentMode(Enum):
   PayPal="PayPal"
 
 def checkout(mode,amount):
-  if mode==PaymentMode.PayPal:
+  if mode==PaymentMode.PayPal.value:
     return ProcessPayPal(amount)
