@@ -1,5 +1,6 @@
 from enum import Enum
-import PaymentHandlers 
+from PaymentHandlers import ProcessPayPal
+from PaymentHandlers import ProcessGooglePay
 class PaymentMode(Enum):
   PayPal="PAYPAL"
   GooglePay="GOOGLEPAY"
