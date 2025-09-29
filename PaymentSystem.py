@@ -8,9 +8,12 @@ class PaymentMode(Enum):
   CreditCard="CREDITCARD"
 
 def checkout(mode,amount):
-  if mode.upper()==PaymentMode.PayPal.value:
-    return ProcessPayPal(amount)
-  elif mode.upper()==PaymentMode.GooglePay.value:
-    return ProcessGooglePay(amount)
-  elif mode.upper()==PaymentMode.CreditCard.value:
-    return ProcessCreditCard(amount)
+  payment_methods = 
+  {  
+    PaymentMode.PayPal.value: ProcessPayPal
+    PaymentMode.GooglePay.value: ProcessGooglePay
+    PaymentMode.CreditCard.value: ProcessCreditCard
+}
+method=payment_methods.get(mode.upper())
+if method !=None:
+  return method(value)
