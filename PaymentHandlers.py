@@ -4,3 +4,6 @@ def ProcessPayPal(amount):
 def ProcessGooglePay(amount):
   return f"Processed GooglePay payment amount of ${amount}"
   #Add GooglePay Specific Logic Here
+def ProcessCreditCard(amount):
+  return f"Processed CreditCard payment amount of ${amount}"
+  #Add CreditCard Specific Logic Here
