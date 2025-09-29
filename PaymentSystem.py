@@ -1,8 +1,8 @@
 from enum import Enum
 from PaymentHandlers import ProcessPayPal
 class PaymentMode(Enum):
-  PayPal="PayPal"
+  PayPal="PAYPAL"
 
 def checkout(mode,amount):
-  if mode==PaymentMode.PayPal.value:
+  if mode.upper()==PaymentMode.PayPal.value:
     return ProcessPayPal(amount)
