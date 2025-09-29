@@ -1,8 +1,8 @@
 from Enum import Enum
 from PaymentHandlers import ProcessPayPal
 class PaymentMode(Enum):
-  PayPal=1
+  PayPal="PayPal"
 
-payment_handlers={
-  PaymentMode.PayPal:ProcessPayPal
-
+  def checkout(mode,amount):
+    if mode==PaymentMode.PayPal:
+      ProcessPayPal(amount)
