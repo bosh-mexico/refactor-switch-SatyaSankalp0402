@@ -7,3 +7,5 @@ def ProcessGooglePay(amount):
 def ProcessCreditCard(amount):
   return f"Processed CreditCard payment amount of ${amount}"
   #Add CreditCard Specific Logic Here
+def InvalidPaymentMode(amount):
+  return "Invalid Payment Mode Selected"
