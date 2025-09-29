@@ -9,3 +9,5 @@ class TestCheckout(unittest.TestCase):
   def test_checkout_googlepay(self):
     result=checkout("GooglePay",200)
     self.assertEqual(result,"Processed GooglePay payment amount of $200")
+    result=checkout("gooGlePAY",150)
+    self.assertEqual(result,"Processed GooglePay payment amount of $150")
