@@ -4,4 +4,5 @@ class TestCheckout(unittest.TestCase):
   def test_checkout_paypal(self):
     result=checkout("PayPal",100)
     self.assertEqual(result,"Processed PayPal payment amount of $100")
-  
+    result=checkout("Paypal",150)
+    self.assertEqual(result,"Processed PayPal payment amount of $150")
