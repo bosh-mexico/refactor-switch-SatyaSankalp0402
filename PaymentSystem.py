@@ -12,7 +12,7 @@ def checkout(mode,amount):
     PaymentMode.PayPal.value: ProcessPayPal,
     PaymentMode.GooglePay.value: ProcessGooglePay,
     PaymentMode.CreditCard.value: ProcessCreditCard
-}
-method=payment_methods.get(mode.upper())
-if method !=None:
-  return method(value)
+  }
+  method=payment_methods.get(mode.upper())
+  if method !=None:
+    return method(value)
