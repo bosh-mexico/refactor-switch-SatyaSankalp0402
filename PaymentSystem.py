@@ -2,6 +2,7 @@ from enum import Enum
 from PaymentHandlers import ProcessPayPal
 from PaymentHandlers import ProcessGooglePay
 from PaymentHandlers import ProcessCreditCard
+from PaymentHandlers import InvalidPaymentMode
 class PaymentMode(Enum):
   PayPal="PAYPAL"
   GooglePay="GOOGLEPAY"
@@ -16,3 +17,5 @@ def checkout(mode,amount):
   method=payment_methods.get(mode.upper())
   if method !=None:
     return method(amount)
+  else:
+    return InvalidPaymentMode()
