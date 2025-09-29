@@ -1,4 +1,4 @@
-from Enum import Enum
+from enum import Enum
 from PaymentHandlers import ProcessPayPal
 class PaymentMode(Enum):
   PayPal="PayPal"
