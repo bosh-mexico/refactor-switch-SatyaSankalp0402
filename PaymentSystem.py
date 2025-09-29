@@ -15,4 +15,4 @@ def checkout(mode,amount):
   }
   method=payment_methods.get(mode.upper())
   if method !=None:
-    return method(value)
+    return method(amount)
