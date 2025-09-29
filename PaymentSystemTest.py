@@ -16,4 +16,4 @@ class TestCheckout(unittest.TestCase):
     self.assertEqual(result,"Processed CreditCard payment amount of $10000")
   def test_checkout_invalid(self):
     result=checkout("PhonePe",4000)
-    self.assertEqual(result,"Invalid Payment Mode")
+    self.assertEqual(result,"Invalid Payment Mode Selected")
