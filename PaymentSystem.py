@@ -4,18 +4,17 @@ from PaymentHandlers import ProcessGooglePay
 from PaymentHandlers import ProcessCreditCard
 from PaymentHandlers import InvalidPaymentMode
 class PaymentMode(Enum):
-  PayPal="PAYPAL"
-  GooglePay="GOOGLEPAY"
-  CreditCard="CREDITCARD"
+  PayPal=1
+  GooglePay=2
+  CreditCard=3
+  UNKOWN=99
 
-def checkout(mode,amount):
-  payment_methods = {  
-    PaymentMode.PayPal.value: ProcessPayPal,
-    PaymentMode.GooglePay.value: ProcessGooglePay,
-    PaymentMode.CreditCard.value: ProcessCreditCard
+payment_methods = {  
+    PaymentMode.PAYPAL: PayPalPayment,
+    PaymentMode.GOOGLEPAY: GooglePayPayment,
+    PaymentMode.CREDITCARD: CreditCardPayment,
+    PaymentMode.UNKNOWN: UnknownPayment()
   }
-  method=payment_methods.get(mode.upper())
-  if method !=None:
-    return method(amount)
-  else:
-    return InvalidPaymentMode()
+def checkout(mode,amount):
+  method=payment_methods.get(mode)
+  payment_handler.process(amount)
