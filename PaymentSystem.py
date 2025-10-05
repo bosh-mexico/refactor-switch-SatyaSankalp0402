@@ -15,4 +15,4 @@ payment_methods = {
   }
 def checkout(mode,amount):
   payment_handler=payment_methods.get(mode)
-  payment_handler.ProcessPayment(amount)
+  return payment_handler.ProcessPayment(amount)
