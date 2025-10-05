@@ -2,9 +2,9 @@ from enum import Enum
 from PaymentHandlers import PayPalPayment, GooglePayPayment, CreditCardPayment, UnknownPayment
 
 class PaymentMode(Enum):
-  PayPal=1
-  GooglePay=2
-  CreditCard=3
+  PAYPAL=1
+  GOOGLEPAY=2
+  CREDITCARD=3
   UNKOWN=99
 
 payment_methods = {  
