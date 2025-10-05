@@ -1,8 +1,6 @@
 from enum import Enum
-from PaymentHandlers import ProcessPayPal
-from PaymentHandlers import ProcessGooglePay
-from PaymentHandlers import ProcessCreditCard
-from PaymentHandlers import InvalidPaymentMode
+from PaymentHandlers import PayPalPayment, GooglePayPayment, CreditCardPayment, UnkownPayment
+
 class PaymentMode(Enum):
   PayPal=1
   GooglePay=2
@@ -16,5 +14,5 @@ payment_methods = {
     PaymentMode.UNKNOWN: UnknownPayment()
   }
 def checkout(mode,amount):
-  method=payment_methods.get(mode)
+  payment_handler=payment_methods.get(mode)
   payment_handler.process(amount)
