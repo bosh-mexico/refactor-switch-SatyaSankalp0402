@@ -1,5 +1,5 @@
 from enum import Enum
-from PaymentHandlers import PayPalPayment, GooglePayPayment, CreditCardPayment, UnkownPayment
+from PaymentHandlers import PayPalPayment, GooglePayPayment, CreditCardPayment, UnknownPayment
 
 class PaymentMode(Enum):
   PayPal=1
@@ -8,9 +8,9 @@ class PaymentMode(Enum):
   UNKOWN=99
 
 payment_methods = {  
-    PaymentMode.PAYPAL: PayPalPayment,
-    PaymentMode.GOOGLEPAY: GooglePayPayment,
-    PaymentMode.CREDITCARD: CreditCardPayment,
+    PaymentMode.PAYPAL: PayPalPayment(),
+    PaymentMode.GOOGLEPAY: GooglePayPayment(),
+    PaymentMode.CREDITCARD: CreditCardPayment(),
     PaymentMode.UNKNOWN: UnknownPayment()
   }
 def checkout(mode,amount):
