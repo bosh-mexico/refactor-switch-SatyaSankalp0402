@@ -5,7 +5,7 @@ class PaymentMode(Enum):
   PAYPAL=1
   GOOGLEPAY=2
   CREDITCARD=3
-  UNKOWN=99
+  UNKNOWN=99
 
 payment_methods = {  
     PaymentMode.PAYPAL: PayPalPayment(),
